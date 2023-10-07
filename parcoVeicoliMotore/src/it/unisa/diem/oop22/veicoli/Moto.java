@@ -21,6 +21,9 @@ public class Moto extends Veicolo {
         try{
             // formato targa: LL - NN'NNN
             String tg = getTarga();
+
+            if (tg.length() != 7) throw new CustomExcpetions.InvalidPlateFormatException("Formato della targa non valido!");;
+
             if (Character.isDigit(tg.charAt(0))) throw new CustomExcpetions.InvalidPlateFormatException("Formato della targa non valido!");
             if (Character.isDigit(tg.charAt(1))) throw new CustomExcpetions.InvalidPlateFormatException("Formato della targa non valido!");
 

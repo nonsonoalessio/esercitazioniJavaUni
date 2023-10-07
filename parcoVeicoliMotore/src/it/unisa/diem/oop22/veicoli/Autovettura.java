@@ -21,6 +21,9 @@ public class Autovettura extends Veicolo {
         try{
             // formato targa: LL - NNN - LL
             String tg = getTarga();
+
+            if (tg.length() != 7) throw new CustomExcpetions.InvalidPlateFormatException("Formato della targa non valido!");
+            
             if (Character.isDigit(tg.charAt(0))) throw new CustomExcpetions.InvalidPlateFormatException("Formato della targa non valido!");
             if (Character.isDigit(tg.charAt(1))) throw new CustomExcpetions.InvalidPlateFormatException("Formato della targa non valido!");
 
